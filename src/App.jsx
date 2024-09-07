@@ -1,6 +1,4 @@
 import { create } from 'zustand'
-import CodePreview from './components/CodePreview'
-import Details from './components/Details'
 import Scene from './components/Scene'
 
 const useStore = create((set) => ({
@@ -22,15 +20,6 @@ export default function App() {
   return (
     <>
       <Scene />
-      <div className="main">
-        <div className="code">
-          <div className="code-container">
-            <CodePreview />
-            <Counter />
-          </div>
-        </div>
-        <Details />
-      </div>
     </>
   )
 }
