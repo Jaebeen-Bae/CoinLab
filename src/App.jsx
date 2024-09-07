@@ -11,7 +11,7 @@ function Counter() {
   return (
     <div className="counter">
       <span>{count}</span>
-      <button onClick={inc}>one up</button>
+      <button onClick={inc}>Long</button>
     </div>
   )
 }
@@ -20,6 +20,13 @@ export default function App() {
   return (
     <>
       <Scene />
+      <div className="main">
+        <div className="code">
+          <div className="code-container">
+            <Counter />
+          </div>
+        </div>
+      </div>
     </>
   )
 }
