@@ -2,26 +2,28 @@ import { create } from 'zustand'
 import Scene from './components/Scene'
 
 const useStore = create((set) => ({
-  count: 1,
-  inc: () => set((state) => ({ count: state.count + 1 })),
+  long: 1,
+  short: 1,
+  incLong: () => set((state) => ({ long: state.long + 1 })),
+  incShort: () => set((state) => ({ short: state.short + 1 })),  
 }))
 
 function Long() {
-  const { count, inc } = useStore()
+  const { long, incLong } = useStore()
   return (
     <div className="counter">
-      <span>{count}</span>
-      <button onClick={inc}>Long</button>
+      <span>{long}</span>
+      <button onClick={incLong}>Long</button>
     </div>
   )
 }
 
 function Short() {
-  const { count, inc } = useStore()
+  const { short, incShort } = useStore()
   return (
     <div className="counter">
-      <span>{count}</span>
-      <button onClick={inc}>Short</button>
+      <span>{short}</span>
+      <button onClick={incShort}>Short</button>
     </div>
   )
 }
