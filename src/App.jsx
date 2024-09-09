@@ -1,12 +1,12 @@
-import Header from './components/Header.jsx'
-import Calculator from './views/CalculatorView.jsx'
+import Header from './components/Header'
+import CalculatorView from './views/Calculator/RoiView'
 
 export default function App() {
   return (
     <>    
       <Header/>
       <div>
-        <Calculator/>        
+        <CalculatorView/>        
       </div>
     </>
   )
