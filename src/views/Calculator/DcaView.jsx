@@ -1,4 +1,4 @@
-import roiStore from "../../stores/Calculator/RoiStore";
+import dcaStore from "../../stores/Calculator/DcaStore";
 import { Select, Form, InputNumber, Input } from 'antd'
 
 
@@ -20,7 +20,7 @@ export default function App() {
         </Select>
       );
 
-    const { basePrice, sellPrice, quantity, setBasePrice, setSellPrice, setQuantity} = roiStore();
+    const { basePrice, sellPrice, quantity, setBasePrice, setSellPrice, setQuantity} = dcaStore();
     return (
         <div className='calculator'>
             <Form.Item
@@ -50,19 +50,6 @@ export default function App() {
                     formatter={(value) => value.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
                     style={{width: 320}}                    
                 />   
-            </Form.Item>
-            <Form.Item
-                label="매도수량"
-                name="quantity"
-                rules={[{ message: 'Please input!', }]}
-            >
-                <InputNumber    
-                    value={quantity}
-                    onChange={(value) => setQuantity(value)}
-                    defaultValue={0}
-                    formatter={(value) => value.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}         
-                    style={{width: 320}}
-                />                         
             </Form.Item>
         </div>
    )

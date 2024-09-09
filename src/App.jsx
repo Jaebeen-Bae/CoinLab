@@ -1,5 +1,5 @@
 import Header from './components/Header'
-import CalculatorView from './views/Calculator/RoiView'
+import CalculatorView from './views/Calculator/CalculatorView'
 
 export default function App() {
   return (

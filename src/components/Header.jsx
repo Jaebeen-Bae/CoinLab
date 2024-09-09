@@ -6,7 +6,7 @@ export default function App() {
       <header>  
         <div className='header-content'>
             <h5>
-                <img src={coinlabUrl} style={{height: '4vh' }}/>
+                <img src={coinlabUrl} style={{height: '3vh' }}/>
             </h5>
         </div>   
       </header>    
