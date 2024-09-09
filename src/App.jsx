@@ -6,7 +6,7 @@ export default function App() {
     <>    
       <Header/>
       <div>
-        <Calculator/>        
+        <Calculator/>
       </div>
     </>
   )

@@ -1,8 +1,6 @@
-import { useRef, useMemo } from 'react'
-import CalculateStore from "../stores/CalulatorStore.jsx";
+import { useRef, useMemo, useState } from 'react'
+import CalculateStore from "../stores/CalulatorStore";
 import { Select, Form, InputNumber } from 'antd'
-
-
 
 export default function App() {
     const setBasePrice = CalculateStore((state) => state.setBasePrice);
@@ -46,7 +44,7 @@ export default function App() {
             >
                 <InputNumber    
                     value={basePrice}
-                    onChange={(e) => handleBasePrice(e.basePrice)}                    
+                    onChange={(value) => setBasePrice(value)}                    
                     addonAfter={selectAfter}                    
                     formatter={(value) => value.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
                     style={{width: 320}}                    
@@ -77,6 +75,7 @@ export default function App() {
                     style={{width: 320}}
                 />                         
             </Form.Item>
+            <span>{basePrice}</span>
         </div>
-   )
+   );
 }
