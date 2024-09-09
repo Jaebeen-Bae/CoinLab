@@ -1,11 +1,13 @@
-import Calculator from './Views/CalculatorView'
+import Header from './components/Header'
+import Calculator from './views/CalculatorView'
 
 export default function App() {
   return (
-    <>
-      <div className='main'>
-        <Calculator/>
-      </div>    
+    <>    
+      <Header/>
+      <div>
+        <Calculator/>        
+      </div>
     </>
   )
 }

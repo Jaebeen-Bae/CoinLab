@@ -1,19 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+  font-family: "Noto Sans KR", sans-serif;
 }
-
-html,
-body,
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
-  width: 1170px;
-  height: 99vh;
-  margin-left: auto;
-  margin-right: auto; 
+a {
+  text-decoration: none;
 }
-
-.main {
+header {
+  width: 100vw;
+  height: 10vh;
+  background-position: bottom;
+  background-size: cover;
   display: flex;
-  justify-content: center;  
+  justify-content: center;
+  align-items: center;
+}
+.header-content {
+  color: whitesmoke;
+  text-align: center;
 }

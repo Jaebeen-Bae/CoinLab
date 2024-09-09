@@ -1,5 +1,5 @@
 import { useRef, useMemo } from 'react'
-import useStore from "../Stores/CalulatorStore.jsx";
+import useStore from "../stores/CalulatorStore.jsx";
 import { Select, Form, InputNumber } from 'antd'
 
 
