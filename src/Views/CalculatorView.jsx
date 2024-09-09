@@ -34,7 +34,7 @@ export default function App() {
           <Option value="GBP">£</Option>
           <Option value="CNY">¥</Option>
         </Select>
-      );
+    );
 
     const { basePrice, sellPrice, quantity} = CalculateStore();
     return (
