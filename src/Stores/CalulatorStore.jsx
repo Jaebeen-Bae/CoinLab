@@ -1,6 +1,6 @@
 import create from 'zustand';
 
-const useStore = create((set) => ({
+const CalculateStore = create((set) => ({
     basePrice: 0,
     sellPrice: 0,
     quantity: 0,
@@ -9,4 +9,4 @@ const useStore = create((set) => ({
     setQuantity: (value) => set({quantity : value}),
 }));
 
-export default useStore;
+export default CalculateStore;

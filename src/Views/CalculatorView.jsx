@@ -1,13 +1,13 @@
 import { useRef, useMemo } from 'react'
-import useStore from "../stores/CalulatorStore.jsx";
+import CalculateStore from "../stores/CalulatorStore.jsx";
 import { Select, Form, InputNumber } from 'antd'
 
 
 
 export default function App() {
-    const setBasePrice = useStore((state) => state.setBasePrice);
-    const setSellPrice = useStore((state) => state.setSellPrice);
-    const setQuantity = useStore((state) => state.setQuantity);
+    const setBasePrice = CalculateStore((state) => state.setBasePrice);
+    const setSellPrice = CalculateStore((state) => state.setSellPrice);
+    const setQuantity = CalculateStore((state) => state.setQuantity);
     
     const handleBasePrice = (value) => {
         setBasePrice(value);
@@ -36,7 +36,7 @@ export default function App() {
         </Select>
       );
 
-    const { basePrice, sellPrice, quantity} = useStore();
+    const { basePrice, sellPrice, quantity} = CalculateStore();
     return (
         <div className='Calculate'>
             <Form.Item
