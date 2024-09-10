@@ -24,6 +24,7 @@ export default function App() {
     return (
         <div className='calculator'>
             <Form.Item
+                colon={false}
                 label="매수단가"
                 name="basePrice"
                 rules={[{ message: 'Please input!', }]}
@@ -38,6 +39,7 @@ export default function App() {
                 />       
             </Form.Item>
             <Form.Item
+                colon={false}
                 label="매도수량"
                 name="quantity"
                 rules={[{ message: 'Please input!', }]}

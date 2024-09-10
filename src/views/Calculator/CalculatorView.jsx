@@ -14,7 +14,9 @@ export default function App() {
                     <Radio.Button style={{width: "10vw", minWidth: "120px", textAlign: "center"}} value="DcaView">분할매도 계산</Radio.Button>
                     <Radio.Button style={{width: "10vw", minWidth: "120px", textAlign: "center"}} value="TpView">목표가격 계산</Radio.Button>
                 </Radio.Group>
-                { view == "RoiView" ? <RoiView/> : view == "DcaView" ? <DcaView/> : <TpView/>}
+                {view == "RoiView" && <RoiView/>}
+                {view == "DcaView" && <DcaView/>}
+                {view == "TpView" && <TpView/>}
             </div>
         </div>
    )
