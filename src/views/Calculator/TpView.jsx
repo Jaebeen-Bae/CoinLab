@@ -1,55 +1,64 @@
-import tpStore from "../../stores/Calculator/TpStore";
-import { Select, Form, InputNumber, Input } from 'antd'
+import tpStore from "../../stores/Calculator/TpStore"
+import { InputNumber } from "antd"
 
+function profit(basePrice, sellPrice, quantity) {
+    if(basePrice > 0 && sellPrice > 0 && quantity > 0) {
+        return (
+            Math.round((sellPrice*quantity)-(basePrice*quantity))
+        )
+    }
+    else return ""
+}
 
+function profitPer(basePrice, sellPrice, quantity) {
+    if(basePrice > 0 && sellPrice > 0 && quantity > 0) {
+        return (
+            Math.round((sellPrice-basePrice)/basePrice*1000)/10
+        )
+    }
+    else return ""
+}
 
 export default function App() {
 
-    const selectAfter = (
-        <Select
-          defaultValue="USD"
-          style={{
-            width: 60,
-          }}
-        >
-          <Option value="USD">$</Option>
-          <Option value="KRW">₩</Option>          
-          <Option value="EUR">€</Option>
-          <Option value="GBP">£</Option>
-          <Option value="CNY">¥</Option>
-        </Select>
-      );
+    const { basePrice, sellPrice, quantity, setBasePrice, setSellPrice, setQuantity } = tpStore()
 
-    const { basePrice, sellPrice, quantity, setBasePrice, setSellPrice, setQuantity} = tpStore();
     return (
-        <div className='calculator'>
-            <Form.Item
-                label="매수단가"
-                name="basePrice"
-                rules={[{ message: 'Please input!', }]}
-            >
-                <InputNumber    
-                    value={basePrice}
-                    onChange={(value) => setBasePrice(value)}                    
-                    addonAfter={selectAfter}
-                    defaultValue={0}                                        
-                    formatter={(value) => value.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
-                    style={{width: 320}}                    
-                />       
-            </Form.Item>
-            <Form.Item
-                label="매도수량"
-                name="quantity"
-                rules={[{ message: 'Please input!', }]}
-            >
-                <InputNumber    
-                    value={quantity}
-                    onChange={(value) => setQuantity(value)}
-                    defaultValue={0}
-                    formatter={(value) => value.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}         
-                    style={{width: 320}}
-                />                         
-            </Form.Item>
+        <div className="calculator">
+            <InputNumber    
+                className="inputNumber"
+                value={basePrice}
+                onChange={(value) => setBasePrice(value)}
+                addonBefore={<div className="expression">매수단가</div>}
+                formatter={(value) => value.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+            />       
+            <InputNumber
+                className="inputNumber"            
+                value={sellPrice}
+                onChange={(value) => setSellPrice(value)}
+                addonBefore={<div className="expression">매도단가</div>}                 
+                formatter={(value) => value.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+            />   
+            <InputNumber
+                className="inputNumber"            
+                value={quantity}
+                onChange={(value) => setQuantity(value)}
+                addonBefore={<div className="expression">매도수량</div>}
+                formatter={(value) => value.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}         
+            />
+            <InputNumber
+                className="inputNumber"            
+                value={profit(basePrice, sellPrice, quantity)}
+                addonBefore={<div className="expression">수익금액</div>}
+                formatter={(value) => value.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}         
+            />
+            <InputNumber
+                className="inputNumber"            
+                value={profitPer(basePrice, sellPrice, quantity)}
+                addonBefore={<div className="expression">수익률</div>}
+                formatter={(value) => `${value}%`}
+                parser={(value) => value?.replace('%', '')}
+            />                        
         </div>
    )
 }

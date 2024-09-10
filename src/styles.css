@@ -40,11 +40,20 @@ header {
 }
 .calculator {
   margin-top: 2vh;
+  min-width: 360px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 80vh;
   border: 1px solid #e9ebef;
   border-radius: 8px;
-  padding: 20px;  
+  padding: 2vh;
+  height: 70vh;
+}
+.calculator > .inputNumber{
+  padding: 1vh;
+  width: 320px;
+}
+
+.expression {
+  width: 60px !important;
 }

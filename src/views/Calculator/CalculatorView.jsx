@@ -10,9 +10,9 @@ export default function App() {
         <div className='frame'>
             <div className='main-content'>
                 <Radio.Group value={view} onChange={(e) => setView(e.target.value)}>
-                    <Radio.Button style={{width: "10vw", minWidth: "120px", textAlign: "center"}} value="RoiView">수익률 계산</Radio.Button>
-                    <Radio.Button style={{width: "10vw", minWidth: "120px", textAlign: "center"}} value="DcaView">분할매도 계산</Radio.Button>
-                    <Radio.Button style={{width: "10vw", minWidth: "120px", textAlign: "center"}} value="TpView">목표가격 계산</Radio.Button>
+                    <Radio.Button style={{minWidth: "120px", textAlign: "center"}} value="RoiView">수익률 계산</Radio.Button>
+                    <Radio.Button style={{minWidth: "120px", textAlign: "center"}} value="DcaView">분할매도 계산</Radio.Button>
+                    <Radio.Button style={{minWidth: "120px", textAlign: "center"}} value="TpView">목표가격 계산</Radio.Button>
                 </Radio.Group>
                 { view == "RoiView" ? <RoiView/> : view == "DcaView" ? <DcaView/> : <TpView/>}
             </div>
